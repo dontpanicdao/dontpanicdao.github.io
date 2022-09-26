@@ -23,3 +23,7 @@ yarn-error.log*
 # No artifacts
 *.tar.gz
 ./**.tar.gz
+
+package-lock.json
+dist/
+yarn.lock

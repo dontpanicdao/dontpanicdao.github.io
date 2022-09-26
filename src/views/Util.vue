@@ -1,16 +1,12 @@
 <template>
   <div>
     <div class="main-content">
-      <div
-        class="header d-flex pt-4 pt-md-8 min-vh-100 bg-cover"
-        rel="preload"
-        style="
+      <div class="header d-flex pt-4 pt-md-8 min-vh-100 bg-cover" rel="preload" style="
           display: none;
           background-image: url('/img/theme/elements-cover.svg');
           background-size: cover;
           background-position: center top;
-        "
-      >
+        ">
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-lg-6 col-md-7">
@@ -24,18 +20,10 @@
                   <EC v-if="utilPane == 3" />
                 </div>
                 <div class="card-footer footy">
-                  <div
-                    v-if="utilPane !== 1"
-                    class="btn btn-sm btn-success float-left"
-                    @click="moveLeft"
-                  >
+                  <div v-if="utilPane !== 1" class="btn btn-sm btn-success float-left" @click="moveLeft">
                     <i class="fas fa-angle-left"></i>
                   </div>
-                  <div
-                    v-if="utilPane !== 3"
-                    class="btn btn-sm btn-success float-right"
-                    @click="moveRight"
-                  >
+                  <div v-if="utilPane !== 3" class="btn btn-sm btn-success float-right" @click="moveRight">
                     <i class="fas fa-angle-right"></i>
                   </div>
                 </div>
@@ -74,4 +62,6 @@ export default {
   },
 };
 </script>
-<style src="@vueform/toggle/themes/default.css"></style>
+<style src="@vueform/toggle/themes/default.css">
+
+</style>

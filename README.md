@@ -17,3 +17,4 @@ yarn serve
 ```bash
 yarn build
 ```
+For linux user replace ```yarn``` by ```npm run```
