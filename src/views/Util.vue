@@ -1,15 +1,17 @@
 <template>
   <div>
     <div class="main-content">
-      <div class="header d-flex pt-4 pt-md-8 min-vh-100 bg-cover" rel="preload" style="
+      <div class="d-flex pt-4 pt-md-8 min-vh-100 bg-cover" rel="preload" style="
           display: none;
-          background-image: url('/img/theme/elements-cover.svg');
+          background: linear-gradient(180deg, rgba(40, 40, 110, 1) 0%, rgba(105, 66, 93, 1) 44%, rgba(232, 81, 34, 1) 100%);
           background-size: cover;
           background-position: center top;
         ">
+
+        <Header />
         <div class="container-fluid">
           <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-7">
+            <div class="col-lg-8 col-md-9">
               <div class="card bg-secondary shadow border-0">
                 <div class="card-header text-center">
                   <h2>Stark Util &nbsp;&nbsp;<i class="fas fa-random"></i></h2>
@@ -40,9 +42,11 @@ import { mapGetters } from "vuex";
 import Converter from "@/views/components/Converter.vue";
 import StarkNet from "@/views/components/StarkNet.vue";
 import EC from "@/views/components/EC.vue";
+import Header from '@/views/components/Header.vue';
 
 export default {
   components: {
+    Header,
     Converter,
     StarkNet,
     EC,

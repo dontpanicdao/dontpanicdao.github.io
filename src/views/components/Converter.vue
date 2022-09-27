@@ -3,7 +3,7 @@
     <input v-model="input" type="text" class="form-control formy mt-2 mb-4 text-center shadow" placeholder="input..." />
     <div>
       <ul class="list-group mb-4">
-        <li class="list-group-item">
+        <li class="list-group-item handleOverflow">
           felt:
           <div v-if="outBNComp.val" :class="[
             outBNComp.valid
@@ -14,7 +14,7 @@
             {{ outBNComp.val }}
           </div>
         </li>
-        <li class="list-group-item">
+        <li class="list-group-item handleOverflow">
           hex:
           <div v-if="outHexComp.val" :class="[
             outHexComp.valid
@@ -26,7 +26,7 @@
           </div>
         </li>
 
-        <li class="list-group-item">
+        <li class="list-group-item handleOverflow">
           selector:
           <Toggle v-model="selectorHex" onLabel="hex" offLabel="dec" class="float-right" />
           <br /><br />
@@ -49,7 +49,7 @@
             {{ outSelectorComp.val.inty }}
           </div>
         </li>
-        <li class="list-group-item">
+        <li class="list-group-item handleOverflow">
           uint256<small>(low high)</small>:
           <Toggle v-model="twoFiddyHex" onLabel="hex" offLabel="dec" class="float-right" />
           <br /><br />
@@ -86,7 +86,7 @@
             </div>
           </div>
         </li>
-        <li class="list-group-item">
+        <li class="list-group-item handleOverflow">
           Big3<small>(d0 d1 d2)</small>:
           <Toggle v-model="bigThreeHex" onLabel="hex" offLabel="dec" class="float-right" />
           <br /><br />
@@ -254,17 +254,12 @@ export default {
 };
 </script>
 <style>
-.list-group-item {
-  float: left;
-  overflow: scroll;
-  font-size: 0.8rem;
+.handleOverflow {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
 }
 
 .list-group-item .btn {
   font-size: 0.8rem;
-}
-
-div .btn {
-  white-space: nowrap;
 }
 </style>
