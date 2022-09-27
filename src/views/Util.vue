@@ -11,7 +11,7 @@
         <Header />
         <div class="container-fluid">
           <div class="row justify-content-center">
-            <div class="col-lg-8 col-md-9">
+            <div class="col-lg-7 col-md-8 col-sm-10">
               <div class="card bg-secondary shadow border-0">
                 <div class="card-header text-center">
                   <h2>Stark Util &nbsp;&nbsp;<i class="fas fa-random"></i></h2>
