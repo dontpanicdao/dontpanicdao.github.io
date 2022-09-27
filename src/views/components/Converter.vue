@@ -253,10 +253,10 @@ export default {
   },
 };
 </script>
-<style>
-.handleOverflow {
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
+<style scoped>
+.list-group-item {
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .list-group-item .btn {
