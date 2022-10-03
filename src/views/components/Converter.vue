@@ -3,52 +3,9 @@
     <input v-model="input" type="text" class="form-control formy mt-2 mb-4 text-center shadow" placeholder="input..." />
     <div>
       <ul class="list-group mb-4">
-        <li class="list-group-item handleOverflow">
-          felt:
-          <div v-if="outBNComp.val" :class="[
-            outBNComp.valid
-              ? 'btn btn-sm btn-outline-success'
-              : 'btn btn-sm btn-outline-danger',
-          ]" @click="copy(outBNComp.val)">
-            <i v-if="outBNComp.inFmt" class="fas fa-check-circle text-success float-left"></i>
-            {{ outBNComp.val }}
-          </div>
-        </li>
-        <li class="list-group-item handleOverflow">
-          hex:
-          <div v-if="outHexComp.val" :class="[
-            outHexComp.valid
-              ? 'btn btn-sm btn-outline-success'
-              : 'btn btn-sm btn-outline-danger',
-          ]" @click="copy(outHexComp.val)">
-            <i v-if="outHexComp.inFmt" class="fas fa-check-circle text-success float-left"></i>
-            {{ outHexComp.val }}
-          </div>
-        </li>
-
-        <li class="list-group-item handleOverflow">
-          selector:
-          <Toggle v-model="selectorHex" onLabel="hex" offLabel="dec" class="float-right" />
-          <br /><br />
-          <div v-if="outSelectorComp.val.hexy && selectorHex" :class="[
-            outSelectorComp.valid
-              ? 'btn btn-sm btn-outline-success'
-              : 'btn btn-sm btn-outline-danger',
-          ]" @click="copy(outSelectorComp.val.hexy)">
-            <i v-if="outSelectorComp.inFmt && !outHexComp.inFmt"
-              class="fas fa-check-circle text-success float-left"></i>
-            {{ outSelectorComp.val.hexy }}
-          </div>
-          <div v-if="outSelectorComp.val.inty && !selectorHex" :class="[
-            outSelectorComp.valid
-              ? 'btn btn-sm btn-outline-success'
-              : 'btn btn-sm btn-outline-danger',
-          ]" @click="copy(outSelectorComp.val.inty)">
-            <i v-if="outSelectorComp.inFmt && !outHexComp.inFmt"
-              class="fas fa-check-circle text-success float-left"></i>
-            {{ outSelectorComp.val.inty }}
-          </div>
-        </li>
+        <SimpleCopySelector :inputFunction="outBNComp" title="felt:" />
+        <SimpleCopySelector :inputFunction="outHexComp" title="hex:" />
+        <ComplexCopySelector :inputFunction="outSelectorComp" title="selector:" />
         <li class="list-group-item handleOverflow">
           uint256<small>(low high)</small>:
           <Toggle v-model="twoFiddyHex" onLabel="hex" offLabel="dec" class="float-right" />
@@ -146,6 +103,8 @@
   </div>
 </template>
 <script>
+import SimpleCopySelector from "./SimpleCopySelector";
+import ComplexCopySelector from "./ComplexCopySelector";
 import Toggle from "@vueform/toggle";
 import utils from "@/utils";
 import BN from "bn.js";
@@ -153,10 +112,11 @@ import BN from "bn.js";
 export default {
   components: {
     Toggle,
+    SimpleCopySelector,
+    ComplexCopySelector
   },
   data() {
     return {
-      selectorHex: false,
       twoFiddyHex: false,
       bigThreeHex: false,
       input: "",
