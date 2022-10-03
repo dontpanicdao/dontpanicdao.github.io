@@ -1,32 +1,30 @@
 <template>
   <div>
-    <div class="main-content">
-      <div class="d-flex pt-4 pt-md-8 min-vh-100 bg-cover" rel="preload" style="
-          display: none;
-          background: linear-gradient(180deg, rgba(40, 40, 110, 1) 0%, rgba(105, 66, 93, 1) 44%, rgba(232, 81, 34, 1) 100%);
-          background-size: cover;
-          background-position: center top;
-        ">
-
+    <div class="main-content ">
+      <div class="min-vh-100"
+        style="
+          background: linear-gradient(180deg, rgba(40, 40, 110, 1) 0%, rgba(105, 66, 93, 1) 44%, rgba(232, 81, 34, 1) 100%);">
         <Header />
-        <div class="container-fluid">
-          <div class="row justify-content-center">
-            <div class="col-lg-7 col-md-8 col-sm-10">
-              <div class="card bg-secondary shadow border-0">
-                <div class="card-header text-center">
-                  <h2>Stark Util &nbsp;&nbsp;<i class="fas fa-random"></i></h2>
-                </div>
-                <div class="card-body px-lg-5">
-                  <Converter v-if="utilPane == 1" />
-                  <StarkNet v-if="utilPane == 2" />
-                  <EC v-if="utilPane == 3" />
-                </div>
-                <div class="card-footer footy">
-                  <div v-if="utilPane !== 1" class="btn btn-sm btn-success float-left" @click="moveLeft">
-                    <i class="fas fa-angle-left"></i>
+        <div class="d-flex pt-3 pt-md-6 " rel="preload">
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              <div class="col-lg-7 col-md-8 col-sm-10">
+                <div class="card bg-secondary shadow border-0">
+                  <div class="card-header text-center">
+                    <h2>Stark Util &nbsp;&nbsp;<i class="fas fa-random"></i></h2>
                   </div>
-                  <div v-if="utilPane !== 3" class="btn btn-sm btn-success float-right" @click="moveRight">
-                    <i class="fas fa-angle-right"></i>
+                  <div class="card-body px-lg-5">
+                    <Converter v-if="utilPane == 1" />
+                    <StarkNet v-if="utilPane == 2" />
+                    <EC v-if="utilPane == 3" />
+                  </div>
+                  <div class="card-footer footy">
+                    <div v-if="utilPane !== 1" class="btn btn-sm btn-success float-left" @click="moveLeft">
+                      <i class="fas fa-angle-left"></i>
+                    </div>
+                    <div v-if="utilPane !== 3" class="btn btn-sm btn-success float-right" @click="moveRight">
+                      <i class="fas fa-angle-right"></i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -34,6 +32,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </template>

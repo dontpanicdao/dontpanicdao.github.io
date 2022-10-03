@@ -1,5 +1,6 @@
 <template>
-    <header>
+    <header class="">
+        LAMAeazezaaez
     </header>
 </template>
 
