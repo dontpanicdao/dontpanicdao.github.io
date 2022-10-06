@@ -5,6 +5,7 @@
       <ul class="list-group mb-4">
         <SimpleCopySelector :inputFunction="outBNComp" title="felt:" />
         <SimpleCopySelector :inputFunction="outHexComp" title="hex:" />
+        <SimpleCopySelector :inputFunction="outStringComp" title="string:" />
         <ComplexCopySelector :inputFunction="outSelectorComp" title="selector:" />
         <li class="list-group-item handleOverflow">
           uint256<small>(low high)</small>:
@@ -129,44 +130,34 @@ export default {
     };
   },
   computed: {
-    outHexComp() {
-      const val = utils.toHex(this.input);
-      let data = { val: val, valid: true, inFmt: false };
-      if (
-        this.input.startsWith("0x") &&
-        utils.isHex(utils.removeHexPrefix(this.input))
-      ) {
-        data.inFmt = true;
-      }
-      const test = new BN(utils.toBN(val));
-      if (test.gte(this.MAX_VAL)) {
-        data.valid = false;
-      }
-      return data;
-    },
     outBNComp() {
       const val = utils.toBN(this.input).toString(10);
-      let data = { val: val, valid: true, inFmt: false };
-      if (utils.isDecimal(this.input)) {
-        data.inFmt = true;
-      }
+      const inFmt = utils.isDecimal(this.input)
       const test = new BN(val);
-      if (test.gte(this.MAX_VAL)) {
-        data.valid = false;
-      }
-      return data;
+      const valid = this.isValid(test);
+      return { val, valid, inFmt };
+    },
+    outHexComp() {
+      const val = utils.toHex(this.input);
+      const inFmt = this.input.startsWith("0x") && utils.isHex(utils.removeHexPrefix(this.input));
+      const test = new BN(utils.toBN(val));
+      const valid = this.isValid(test);
+      return { val, valid, inFmt };
+    },
+    outStringComp() {
+      const hex = utils.toHex(this.input).slice(2);
+      let val = hex.length == 0 ? "" : Buffer.from(hex, 'hex');
+      let inFmt = utils.isDecimal(this.input);
+      const test = new BN(utils.toBN(hex));
+      const valid = this.isValid(test);
+      return { val, valid, inFmt };
     },
     outSelectorComp() {
       const val = utils.toSelector(this.input);
-      let data = { val: val, valid: true, inFmt: false };
-      if (!utils.isDecimal(this.input) && !utils.isHex("0x")) {
-        data.inFmt = true;
-      }
+      let inFmt = utils.isDecimal(!utils.isDecimal(this.input) && !utils.isHex("0x"));
       const test = new BN(utils.toBN(val.inty));
-      if (test.gte(this.MAX_VAL)) {
-        data.valid = false;
-      }
-      return data;
+      const valid = this.isValid(test);
+      return { val, valid, inFmt };
     },
     out256Comp() {
       const val = utils.to256(this.input);
@@ -210,6 +201,9 @@ export default {
     async copy(text) {
       await navigator.clipboard.writeText(text);
     },
+    isValid(input) {
+      return input.lte(this.MAX_VAL)
+    }
   },
 };
 </script>
