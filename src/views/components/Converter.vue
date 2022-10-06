@@ -134,76 +134,69 @@ export default {
       const val = utils.toBN(this.input).toString(10);
       const inFmt = utils.isDecimal(this.input)
       const test = new BN(val);
-      const valid = this.isValid(test);
+      const valid = this.isLessThanMaxVal(test);
       return { val, valid, inFmt };
     },
     outHexComp() {
       const val = utils.toHex(this.input);
       const inFmt = this.input.startsWith("0x") && utils.isHex(utils.removeHexPrefix(this.input));
       const test = new BN(utils.toBN(val));
-      const valid = this.isValid(test);
+      const valid = this.isLessThanMaxVal(test);
       return { val, valid, inFmt };
     },
     outStringComp() {
       const hex = utils.toHex(this.input).slice(2);
-      let val = hex.length == 0 ? "" : Buffer.from(hex, 'hex');
-      let inFmt = utils.isDecimal(this.input);
-      const test = new BN(utils.toBN(hex));
-      const valid = this.isValid(test);
+      const val = hex.length == 0 ? "" : Buffer.from(hex, 'hex');
+      const inFmt = utils.isDecimal(this.input);
+      const test = new BN(val);
+      const valid = this.isLessThanMaxVal(test);
       return { val, valid, inFmt };
     },
     outSelectorComp() {
       const val = utils.toSelector(this.input);
-      let inFmt = utils.isDecimal(!utils.isDecimal(this.input) && !utils.isHex("0x"));
+      const inFmt = utils.isDecimal(!utils.isDecimal(this.input) && !utils.isHex("0x"));
       const test = new BN(utils.toBN(val.inty));
-      const valid = this.isValid(test);
+      const valid = this.isLessThanMaxVal(test);
       return { val, valid, inFmt };
     },
     out256Comp() {
-      const val = utils.to256(this.input);
-      let data = {
-        val: { low: val.low.toString(), high: val.high.toString() },
-        hex: {
-          low: utils.addHexPrefix(val.low.toString(16)),
-          high: utils.addHexPrefix(val.high.toString(16)),
-        },
-        valid: true,
-      };
+      const val256 = utils.to256(this.input);
+      const val = { low: val256.low.toString(), high: val256.high.toString() }
+      const hex = { low: utils.addHexPrefix(val.low.toString(16)), high: utils.addHexPrefix(val.high.toString(16)) }
       const test = new BN(val.high);
-      if (test.gte(this.MAX_VAL_HIGH)) {
-        data.valid = false;
-      }
-      return data;
+      const valid = this.isLessThanMaxValHigh(test);
+      return { val, hex, valid };
     },
     outBig3() {
-      const val = utils.toBig3(this.input);
-      let data = {
-        val: {
-          D0: val.D0.toString(),
-          D1: val.D1.toString(),
-          D2: val.D2.toString(),
-        },
-        hex: {
-          D0: utils.addHexPrefix(val.D0.toString(16)),
-          D1: utils.addHexPrefix(val.D1.toString(16)),
-          D2: utils.addHexPrefix(val.D2.toString(16)),
-        },
-        valid: true,
+      const valBig3 = utils.toBig3(this.input);
+      const val = {
+        D0: valBig3.D0.toString(),
+        D1: valBig3.D1.toString(),
+        D2: valBig3.D2.toString(),
       };
-      const test = new BN(val.D2);
-      if (test.gte(this.MAX_VAL_D2)) {
-        data.valid = false;
-      }
-      return data;
+      const hex = {
+        D0: utils.addHexPrefix(valBig3.D0.toString(16)),
+        D1: utils.addHexPrefix(valBig3.D1.toString(16)),
+        D2: utils.addHexPrefix(valBig3.D2.toString(16)),
+      };
+      const test = new BN(valBig3.D2);
+      const valid = this.isLessThanMaxValD2(test);
+      return { val, hex, valid };
     },
   },
   methods: {
     async copy(text) {
       await navigator.clipboard.writeText(text);
     },
-    isValid(input) {
+    isLessThanMaxVal(input) {
       return input.lte(this.MAX_VAL)
-    }
+    },
+    isLessThanMaxValHigh(input) {
+      return input.lte(this.MAX_VAL_HIGH)
+    },
+    isLessThanMaxValD2(input) {
+      return input.lte(this.MAX_VAL_D2)
+    },
   },
 };
 </script>
