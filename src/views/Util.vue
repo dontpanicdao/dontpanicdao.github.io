@@ -5,7 +5,7 @@
         style="
           background: linear-gradient(180deg, rgba(40, 40, 110, 1) 0%, rgba(105, 66, 93, 1) 44%, rgba(232, 81, 34, 1) 100%);">
         <Header />
-        <div class="d-flex pt-3 pt-md-6 " rel="preload">
+        <div class="d-flex pt-2 pt-md-5 " rel="preload">
           <div class="container-fluid">
             <div class="row justify-content-center">
               <div class="col-lg-7 col-md-8 col-sm-10">
