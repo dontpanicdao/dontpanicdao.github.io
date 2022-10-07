@@ -2,6 +2,8 @@
   <div>
     <input v-model="input" type="text" class="form-control formy mt-2 mb-4 text-center shadow" placeholder="input..." />
     <div>
+      <!-- TODO check every inFmt -->
+      <!-- TODO check every isValid -->
       <ul class="list-group mb-4">
         <SimpleCopyComponent :dataBag="outBNComp" title="felt:" />
         <SimpleCopyComponent :dataBag="outHexComp" title="hex:" />
