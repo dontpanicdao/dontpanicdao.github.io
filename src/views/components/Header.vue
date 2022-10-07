@@ -3,20 +3,19 @@
         <div class="row justify-content-center">
             <div class="col-lg-7 col-md-8 col-sm-10">
                 <div class="topnav">
+                    <a href="home"><img src="img/brand/jibeHex.png" alt="Logo"></a>
                     <!-- Centered link -->
-                    <div class="topnav-centered">
-                        <a href="#home" class="active">Home</a>
-                    </div>
                     <!-- Left-aligned links (default) -->
-                    <a href="#news">News</a>
-                    <a href="#contact">Contact</a>
+                    <a class="active" href="#converter">Converter</a>
+                    <a href="txStatusChecker">Status checker</a>
+                    <a href="callFunction">Call function</a>
+                    <a href="l1l2Converter">L1->L2</a>
+                    <a href="l1l2Converter">Signature</a> <!-- TODO RENAME???-->
 
                     <!-- Right-aligned links -->
                     <div class="topnav-right">
-                        <a href="#search">Search</a>
-                        <a href="#about">About</a>
+                        <a href="about">About</a>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -56,16 +55,10 @@ img {
 
 .topnav a.active {
     background-color: #e85122;
-    color: #28286e
+    color: #28286e;
+    border-radius: 10px;
 }
 
-.topnav-centered a {
-    float: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 .topnav-right {
     float: right;

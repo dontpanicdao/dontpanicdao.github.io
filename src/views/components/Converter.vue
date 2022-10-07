@@ -3,100 +3,46 @@
     <input v-model="input" type="text" class="form-control formy mt-2 mb-4 text-center shadow" placeholder="input..." />
     <div>
       <ul class="list-group mb-4">
-        <SimpleCopySelector :inputFunction="outBNComp" title="felt:" />
-        <SimpleCopySelector :inputFunction="outHexComp" title="hex:" />
-        <SimpleCopySelector :inputFunction="outStringComp" title="string:" />
-        <ComplexCopySelector :inputFunction="outSelectorComp" title="selector:" />
+        <SimpleCopyComponent :dataBag="outBNComp" title="felt:" />
+        <SimpleCopyComponent :dataBag="outHexComp" title="hex:" />
+        <SimpleCopyComponent :dataBag="outStringComp" title="string:" />
+        <ComplexCopyComponent :dataBag="outSelectorComp" title="selector:" hasHexSelector=true />
+
         <li class="list-group-item handleOverflow">
           uint256<small>(low high)</small>:
           <Toggle v-model="twoFiddyHex" onLabel="hex" offLabel="dec" class="float-right" />
           <br /><br />
           <div v-if="twoFiddyHex">
-            <div v-if="out256Comp.hex.low" :class="[
-              out256Comp.valid
-                ? 'btn btn-sm btn-outline-success'
-                : 'btn btn-sm btn-outline-danger',
-            ]" @click="copy(out256Comp.hex.low)">
-              {{ out256Comp.hex.low }}
-            </div>
-            <div v-if="out256Comp.hex.high" :class="[
-              out256Comp.valid
-                ? 'btn btn-sm btn-outline-success'
-                : 'btn btn-sm btn-outline-danger',
-            ]" @click="copy(out256Comp.hex.high)">
-              {{ out256Comp.hex.high }}
-            </div>
+            <CopyComponent :valueToCopy=out256Comp.hex.low :isValid=out256Comp.valid :inFormat=true
+              showIf="out256Comp.hex.low" />
+            <CopyComponent :valueToCopy=out256Comp.hex.high :isValid=out256Comp.valid :inFormat=true
+              showIf="out256Comp.hex.high" />
           </div>
           <div v-else>
-            <div v-if="out256Comp.val.low" :class="[
-              out256Comp.valid
-                ? 'btn btn-sm btn-outline-success'
-                : 'btn btn-sm btn-outline-danger',
-            ]" @click="copy(out256Comp.val.low)">
-              {{ out256Comp.val.low }}
-            </div>
-            <div v-if="out256Comp.val.high" :class="[
-              out256Comp.valid
-                ? 'btn btn-sm btn-outline-success'
-                : 'btn btn-sm btn-outline-danger',
-            ]" @click="copy(out256Comp.val.high)">
-              {{ out256Comp.val.high }}
-            </div>
+            <CopyComponent :valueToCopy=out256Comp.val.low :isValid=out256Comp.valid :inFormat=true
+              showIf="out256Comp.val.low" />
+            <CopyComponent :valueToCopy=out256Comp.val.high :isValid=out256Comp.valid :inFormat=true
+              showIf="out256Comp.val.high" />
           </div>
         </li>
+
         <li class="list-group-item handleOverflow">
           Big3<small>(d0 d1 d2)</small>:
           <Toggle v-model="bigThreeHex" onLabel="hex" offLabel="dec" class="float-right" />
           <br /><br />
           <div v-if="bigThreeHex">
-            <div v-if="outBig3.hex.D0" :class="[
-              outBig3.valid
-                ? 'btn btn-sm btn-outline-success'
-                : 'btn btn-sm btn-outline-danger',
-            ]" @click="copy(outBig3.hex.D0)">
-              {{ outBig3.hex.D0 }}
-            </div>
+            <CopyComponent :valueToCopy=outBig3.hex.D0 :isValid=outBig3.valid :inFormat=true :showIf="outBig3.hex.D0" />
             <br />
-            <div v-if="outBig3.hex.D1" :class="[
-              outBig3.valid
-                ? 'btn btn-sm btn-outline-success'
-                : 'btn btn-sm btn-outline-danger',
-            ]" @click="copy(outBig3.hex.D1)">
-              {{ outBig3.hex.D1 }}
-            </div>
+            <CopyComponent :valueToCopy=outBig3.hex.D1 :isValid=outBig3.valid :inFormat=true showIf="outBig3.hex.D1" />
             <br />
-            <div v-if="outBig3.hex.D2" :class="[
-              outBig3.valid
-                ? 'btn btn-sm btn-outline-success'
-                : 'btn btn-sm btn-outline-danger',
-            ]" @click="copy(outBig3.hex.D2)">
-              {{ outBig3.hex.D2 }}
-            </div>
+            <CopyComponent :valueToCopy=outBig3.hex.D2 :isValid=outBig3.valid :inFormat=true showIf="outBig3.hex.D2" />
           </div>
           <div v-else>
-            <div v-if="outBig3.val.D0" :class="[
-              outBig3.valid
-                ? 'btn btn-sm btn-outline-success'
-                : 'btn btn-sm btn-outline-danger',
-            ]" @click="copy(outBig3.val.D0)">
-              {{ outBig3.val.D0 }}
-            </div>
+            <CopyComponent :valueToCopy=outBig3.val.D0 :isValid=outBig3.valid :inFormat=true showIf="outBig3.val.D0" />
             <br />
-            <div v-if="outBig3.val.D1" :class="[
-              outBig3.valid
-                ? 'btn btn-sm btn-outline-success'
-                : 'btn btn-sm btn-outline-danger',
-            ]" @click="copy(outBig3.val.D1)">
-              {{ outBig3.val.D1 }}
-            </div>
+            <CopyComponent :valueToCopy=outBig3.val.D1 :isValid=outBig3.valid :inFormat=true showIf="outBig3.val.D1" />
             <br />
-            <div v-if="outBig3.val.D2" :class="[
-              outBig3.valid
-                ? 'btn btn-sm btn-outline-success'
-                : 'btn btn-sm btn-outline-danger',
-            ]" @click="copy(outBig3.val.D2)">
-              {{ outBig3.val.D2 }}
-            </div>
+            <CopyComponent :valueToCopy=outBig3.val.D2 :isValid=outBig3.valid :inFormat=true showIf="outBig3.val.D2" />
           </div>
         </li>
       </ul>
@@ -104,8 +50,9 @@
   </div>
 </template>
 <script>
-import SimpleCopySelector from "./SimpleCopySelector";
-import ComplexCopySelector from "./ComplexCopySelector";
+import SimpleCopyComponent from "./SimpleCopyComponent";
+import ComplexCopyComponent from "./ComplexCopyComponent";
+import CopyComponent from "./CopyComponent.vue";
 import Toggle from "@vueform/toggle";
 import utils from "@/utils";
 import BN from "bn.js";
@@ -113,8 +60,9 @@ import BN from "bn.js";
 export default {
   components: {
     Toggle,
-    SimpleCopySelector,
-    ComplexCopySelector
+    SimpleCopyComponent,
+    ComplexCopyComponent,
+    CopyComponent
   },
   data() {
     return {
@@ -154,7 +102,7 @@ export default {
     },
     outSelectorComp() {
       const val = utils.toSelector(this.input);
-      const inFmt = utils.isDecimal(!utils.isDecimal(this.input) && !utils.isHex("0x"));
+      const inFmt = !utils.isDecimal(this.input) && !utils.isHex("0x");
       const test = new BN(utils.toBN(val.inty));
       const valid = this.isLessThanMaxVal(test);
       return { val, valid, inFmt };
