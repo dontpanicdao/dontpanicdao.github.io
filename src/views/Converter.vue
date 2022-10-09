@@ -18,8 +18,8 @@
   </div>
 </template>
 <script>
-import SimpleCopyComponent from "./SimpleCopyComponent";
-import ToggleComponent from "./ToggleComponent.vue";
+import SimpleCopyComponent from "@/components/SimpleCopyComponent";
+import ToggleComponent from "@/components/ToggleComponent.vue";
 import utils from "@/utils";
 import BN from "bn.js";
 

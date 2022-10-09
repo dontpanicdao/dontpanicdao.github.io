@@ -38,10 +38,10 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
-import Converter from "@/views/components/Converter.vue";
-import StarkNet from "@/views/components/StarkNet.vue";
-import EC from "@/views/components/EC.vue";
-import Header from '@/views/components/Header.vue';
+import Converter from "@/views/Converter.vue";
+import StarkNet from "@/views/StarkNet.vue";
+import EC from "@/views/EC.vue";
+import Header from '@/components/Header.vue';
 
 export default {
   components: {
