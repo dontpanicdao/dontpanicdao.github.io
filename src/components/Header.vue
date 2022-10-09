@@ -3,18 +3,15 @@
         <div class="row justify-content-center">
             <div class="col-lg-7 col-md-8 col-sm-10">
                 <div class="topnav">
-                    <a href="home"><img src="img/brand/jibeHex.png" alt="Logo"></a>
-                    <!-- Centered link -->
-                    <!-- Left-aligned links (default) -->
-                    <a class="active" href="#converter">Converter</a>
-                    <a href="txStatusChecker">Status checker</a>
-                    <a href="callFunction">Call function</a>
-                    <a href="l1l2Converter">L1->L2</a>
-                    <a href="l1l2Converter">Signature</a> <!-- TODO RENAME???-->
+                    <router-link to="/"><img src="img/brand/jibeHex.png" alt="Logo"></router-link>
 
-                    <!-- Right-aligned links -->
+                    <router-link to="/converter">Converter</router-link>
+                    <router-link to="/txStatusChecker">Status checker</router-link>
+                    <router-link to="/callFunction">Call function</router-link>
+                    <router-link to="/l1l2Converter">L1->L2</router-link>
+                    <router-link to="/signature">Signature</router-link> <!-- TODO RENAME???-->
                     <div class="topnav-right">
-                        <a href="about">About</a>
+                        <router-link to="about">About</router-link>
                     </div>
                 </div>
             </div>
