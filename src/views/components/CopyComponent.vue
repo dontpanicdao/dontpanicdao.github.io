@@ -1,10 +1,11 @@
 <template>
-    <div v-if="showIf && valueToCopy" :class="[
+    <div v-if="valueToCopy && valueToCopy !== '0x'" :class="[
       isValid ? 'btn btn-sm btn-outline-success' : 'btn btn-sm btn-outline-danger',
     ]" @click="copy(valueToCopy)">
         <i v-if="inFormat" class="fas fa-check-circle text-success float-left"> </i>
         {{ valueToCopy }}
     </div>
+    <br />
 </template>
 
 <script>
@@ -13,8 +14,10 @@ export default {
     props: {
         valueToCopy: String,
         isValid: Boolean,
-        inFormat: Boolean,
-        showIf: Boolean,
+        inFormat: {
+            type: Boolean,
+            default: true
+        },
     },
     methods: {
         async copy(text) {

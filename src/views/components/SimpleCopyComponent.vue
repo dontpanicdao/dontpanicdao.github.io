@@ -2,7 +2,7 @@
     <li class="list-group-item handleOverflow">
         {{title}}
         <br />
-        <CopyComponent :valueToCopy=dataBag.val :isValid=dataBag.valid :inFormat=dataBag.inFmt showIf="true" />
+        <CopyComponent :valueToCopy=dataBag.val :isValid=dataBag.valid :inFormat=dataBag.inFmt />
     </li>
 </template>
 
@@ -15,7 +15,7 @@ export default {
     },
     name: 'SimpleCopyComponent',
     props: {
-        dataBag: Function,
+        dataBag: Object,
         title: String
     },
 }
