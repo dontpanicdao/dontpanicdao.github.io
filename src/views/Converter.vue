@@ -2,7 +2,7 @@
 
   <div class="card bg-secondary shadow border-0">
     <div class="card-header text-center">
-      <h2>Stark Util &nbsp;&nbsp;<i class="fas fa-random"></i></h2>
+      <h2>Convertor &nbsp;&nbsp;<i class="fas fa-random"></i></h2>
     </div>
     <div class="card-body px-lg-5">
       <input v-model="input" type="text" class="form-control formy mt-2 mb-4 text-center shadow"

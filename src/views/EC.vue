@@ -1,9 +1,9 @@
 <template>
   <div class="card bg-secondary shadow border-0">
     <div class="card-header text-center">
-      <h2>Stark Util &nbsp;&nbsp;<i class="fas fa-random"></i></h2>
+      <h2>Signature &nbsp;&nbsp;<i class="fas fa-signature"></i></h2>
     </div>
-    <div class="card-body px-lg-5">
+    <div class=" card-body px-lg-5">
       <div class="ec-util">
         <ul v-if="!generated" class="list-group text-center">
           <li class="list-group-item">
