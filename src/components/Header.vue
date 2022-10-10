@@ -6,10 +6,8 @@
                     <router-link to="/"><img src="img/brand/jibeHex.png" alt="Logo"></router-link>
 
                     <router-link to="/converter">Converter</router-link>
-                    <router-link to="/txStatusChecker">Status checker</router-link>
-                    <router-link to="/callFunction">Call function</router-link>
                     <router-link to="/l1l2Converter">L1->L2</router-link>
-                    <router-link to="/signature">Signature</router-link> <!-- TODO RENAME???-->
+                    <router-link to="/signature">Signature</router-link>
                     <div class="topnav-right">
                         <router-link to="about">About</router-link>
                     </div>
