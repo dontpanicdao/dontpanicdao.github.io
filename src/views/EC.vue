@@ -26,7 +26,7 @@
             </div>
           </li>
         </ul>
-        <div style="overflow: scroll">
+        <div>
           <br />
           Pedersen Hash:
           <div class="d-flex container-fluid">
