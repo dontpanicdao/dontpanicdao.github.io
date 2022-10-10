@@ -9,7 +9,7 @@
                     <router-link to="/l1l2Converter">L1->L2</router-link>
                     <router-link to="/signature">Signature</router-link>
                     <div class="topnav-right">
-                        <router-link to="about">About</router-link>
+                        <router-link href="https://github.com/gaetbout/stark-utils" target="_blank">About</router-link>
                     </div>
                 </div>
             </div>
