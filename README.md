@@ -23,6 +23,7 @@ It allows to:
  - Modal to explain each page
  - Update security, some packages are obsolete
  - Do "About" page with link to github
+ - On convertor page would a global switch Dec <==> Hex be better?
 
 ## Dev Tools for StarkNet
 
