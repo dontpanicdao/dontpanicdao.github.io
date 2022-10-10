@@ -22,7 +22,7 @@ It allows to:
  - Page 404
  - Modal to explain each page
  - Update security, some packages are obsolete
- 
+ - Do "About" page with link to github
 
 ## Dev Tools for StarkNet
 
