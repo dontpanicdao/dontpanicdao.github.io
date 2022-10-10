@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-lg-7 col-md-8 col-sm-10">
+            <div class="col-lg-8 col-md-11 col-sm-12">
                 <div class="topnav">
                     <router-link class="ignoreHoverAndActive" to="/"><img src="img/brand/jibeHex.png" alt="Logo">
                     </router-link>

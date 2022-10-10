@@ -2,7 +2,7 @@
   <div class="pt-5 pt-md-12  max-height">
     <h1>Stark-utils</h1>
     <h2>I felt you pain</h2>
-    <router-link to="/converter">Open the converter</router-link>
+    <router-link to="/converter">Go to converter</router-link>
   </div>
 </template>
 <script>
