@@ -3,7 +3,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-7 col-md-8 col-sm-10">
                 <div class="topnav">
-                    <router-link to="/"><img src="img/brand/jibeHex.png" alt="Logo"></router-link>
+                    <router-link class="ignoreHoverAndActive" to="/"><img src="img/brand/jibeHex.png" alt="Logo">
+                    </router-link>
 
                     <router-link to="/converter">Converter</router-link>
                     <router-link to="/l1l2">L1->L2</router-link>
@@ -41,6 +42,7 @@ img {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    border-radius: 10px;
 }
 
 .topnav a:hover {
@@ -54,6 +56,9 @@ img {
     border-radius: 10px;
 }
 
+.topnav a.active:first-child {
+    background-color: #e8502200;
+}
 
 .topnav-right {
     float: right;
