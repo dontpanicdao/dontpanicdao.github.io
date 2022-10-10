@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import Util from "@/views/Util.vue";
+import Home from "@/views/Home.vue";
 import Converter from "@/views/Converter.vue";
 import EC from "@/views/EC.vue";
 
 const routes = [
   {
     path: "/",
-    name: "Index",
-    component: Util, // TODO DO HOMEPAGE 
+    name: "Home",
+    component: Home,
   },
   {
     path: "/converter",
