@@ -1,13 +1,21 @@
 <template>
-  <div>
-    <h1>TEST</h1>
+  <div class="pt-5 pt-md-12  max-height">
+    <h1>Stark-utils</h1>
+    <h2>I felt you pain</h2>
+    <router-link to="/converter">Open the converter</router-link>
   </div>
 </template>
 <script>
 
 </script>
-<style src="@vueform/toggle/themes/default.css">
-.h1 {
+<style scoped>
+h1 {
   text-align: center;
+  font-size: 5em;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3em;
 }
 </style>
