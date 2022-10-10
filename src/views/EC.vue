@@ -1,136 +1,98 @@
 <template>
-  <div class="ec-util">
-    <ul v-if="!generated" class="list-group text-center">
-      <li class="list-group-item">
-        <div class="btn btn-sm btn-success" @click="getTestKeys">
-          gen key pair
-        </div>
-      </li>
-    </ul>
-    <ul v-else class="list-group">
-      <li class="list-group-item">
-        Private:
-        <div
-          :class="{ 'btn btn-sm btn-outline-success': privateKey }"
-          @click="copy(privateKey)"
-        >
-          {{ privateKey }}
-        </div>
-      </li>
-      <li class="list-group-item">
-        Public X:
-        <div
-          :class="{ 'btn btn-sm btn-outline-success': publicKeyX }"
-          @click="copy(publicKeyX)"
-        >
-          {{ publicKeyX }}
-        </div>
-      </li>
-    </ul>
-    <div style="overflow: scroll">
-      <br />
-      Pedersen Hash:
-      <div class="d-flex container-fluid">
-        <input
-          v-model="hash1"
-          type="text"
-          class="form-control formy my-3 mr-2 text-center shadow"
-          placeholder="input 1..."
-        />
-        <input
-          v-model="hash2"
-          type="text"
-          class="form-control formy my-3 ml-2 text-center shadow"
-          placeholder="input 2..."
-        />
-      </div>
-      <br />
-      Hash Out:
-      <div
-        :class="{ 'btn btn-sm btn-outline-success': hashOut }"
-        @click="copy(hashOut)"
-      >
-        {{ hashOut }}
-      </div>
-      <br />
-      <br />
-      Signature:
-      <div class="d-flex container-fluid" style="align-items: center">
-        <input
-          v-model="hashData"
-          type="text"
-          class="form-control formy my-3 mr-2 text-center shadow"
-          placeholder="data"
-        />
-        <input
-          v-model="pk"
-          type="text"
-          class="form-control formy my-3 ml-2 text-center shadow"
-          placeholder="private key"
-        />
-        <button
-          class="ml-3 btn btn-sm btn-success"
-          style="height: 2rem"
-          @click="sig"
-        >
-          <i class="fas fa-paper-plane"></i>
-        </button>
-      </div>
-      <br />
-      Sig Out:
-      <ul class="list-group">
-        <li class="list-group-item">
-          r:
-          <div v-if="sigR" class="btn btn-sm btn-outline-success">
-            {{ sigR }}
+  <div class="card bg-secondary shadow border-0">
+    <div class="card-header text-center">
+      <h2>Stark Util &nbsp;&nbsp;<i class="fas fa-random"></i></h2>
+    </div>
+    <div class="card-body px-lg-5">
+      <div class="ec-util">
+        <ul v-if="!generated" class="list-group text-center">
+          <li class="list-group-item">
+            <div class="btn btn-sm btn-success" @click="getTestKeys">
+              gen key pair
+            </div>
+          </li>
+        </ul>
+        <ul v-else class="list-group">
+          <li class="list-group-item">
+            Private:
+            <div :class="{ 'btn btn-sm btn-outline-success': privateKey }" @click="copy(privateKey)">
+              {{ privateKey }}
+            </div>
+          </li>
+          <li class="list-group-item">
+            Public X:
+            <div :class="{ 'btn btn-sm btn-outline-success': publicKeyX }" @click="copy(publicKeyX)">
+              {{ publicKeyX }}
+            </div>
+          </li>
+        </ul>
+        <div style="overflow: scroll">
+          <br />
+          Pedersen Hash:
+          <div class="d-flex container-fluid">
+            <input v-model="hash1" type="text" class="form-control formy my-3 mr-2 text-center shadow"
+              placeholder="input 1..." />
+            <input v-model="hash2" type="text" class="form-control formy my-3 ml-2 text-center shadow"
+              placeholder="input 2..." />
           </div>
-        </li>
-        <li class="list-group-item">
-          s:
-          <div v-if="sigS" class="btn btn-sm btn-outline-success">
-            {{ sigS }}
+          <br />
+          Hash Out:
+          <div :class="{ 'btn btn-sm btn-outline-success': hashOut }" @click="copy(hashOut)">
+            {{ hashOut }}
           </div>
-        </li>
-      </ul>
-      <br />
-      Verify:
-      <div class="d-flex container-fluid">
-        <input
-          v-model="hashData"
-          type="text"
-          class="form-control formy my-3 mr-2 text-center shadow"
-          placeholder="data"
-        />
-        <input
-          v-model="pubX"
-          type="text"
-          class="form-control formy my-3 ml-2 text-center shadow"
-          placeholder="pub"
-        />
-      </div>
-      <div class="d-flex container-fluid">
-        <input
-          v-model="sigR"
-          type="text"
-          class="form-control formy my-3 mr-2 text-center shadow"
-          placeholder="sigR"
-        />
-        <input
-          v-model="sigS"
-          type="text"
-          class="form-control formy my-3 ml-2 text-center shadow"
-          placeholder="sigS"
-        />
-      </div>
-      <div class="text-center">
-        <div v-if="!sigChecked" class="btn btn-info" @click="checkSig">
-          is_valid?
-        </div>
-        <div v-else>
-          <div v-if="sigValid" class="btn btn-success" @click="checkSig">
-            sig valid
+          <br />
+          <br />
+          Signature:
+          <div class="d-flex container-fluid" style="align-items: center">
+            <input v-model="hashData" type="text" class="form-control formy my-3 mr-2 text-center shadow"
+              placeholder="data" />
+            <input v-model="pk" type="text" class="form-control formy my-3 ml-2 text-center shadow"
+              placeholder="private key" />
+            <button class="ml-3 btn btn-sm btn-success" style="height: 2rem" @click="sig">
+              <i class="fas fa-paper-plane"></i>
+            </button>
           </div>
-          <div v-else class="btn btn-danger" @click="checkSig">sig invalid</div>
+          <br />
+          Sig Out:
+          <ul class="list-group">
+            <li class="list-group-item">
+              r:
+              <div v-if="sigR" class="btn btn-sm btn-outline-success">
+                {{ sigR }}
+              </div>
+            </li>
+            <li class="list-group-item">
+              s:
+              <div v-if="sigS" class="btn btn-sm btn-outline-success">
+                {{ sigS }}
+              </div>
+            </li>
+          </ul>
+          <br />
+          Verify:
+          <div class="d-flex container-fluid">
+            <input v-model="hashData" type="text" class="form-control formy my-3 mr-2 text-center shadow"
+              placeholder="data" />
+            <input v-model="pubX" type="text" class="form-control formy my-3 ml-2 text-center shadow"
+              placeholder="pub" />
+          </div>
+          <div class="d-flex container-fluid">
+            <input v-model="sigR" type="text" class="form-control formy my-3 mr-2 text-center shadow"
+              placeholder="sigR" />
+            <input v-model="sigS" type="text" class="form-control formy my-3 ml-2 text-center shadow"
+              placeholder="sigS" />
+          </div>
+          <div class="text-center">
+            <div v-if="!sigChecked" class="btn btn-info" @click="checkSig">
+              is_valid?
+            </div>
+            <div v-else>
+              <div v-if="sigValid" class="btn btn-success" @click="checkSig">
+                sig valid
+              </div>
+              <div v-else class="btn btn-danger" @click="checkSig">sig invalid</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -216,9 +178,9 @@ export default {
 .ec-util {
   font-size: 0.8rem;
 }
+
 .list-group-item {
-  float: left;
-  overflow: scroll;
-  font-size: 0.8rem;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 </style>

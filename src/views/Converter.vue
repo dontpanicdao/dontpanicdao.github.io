@@ -1,7 +1,12 @@
 <template>
-  <div>
-    <input v-model="input" type="text" class="form-control formy mt-2 mb-4 text-center shadow" placeholder="input..." />
-    <div>
+
+  <div class="card bg-secondary shadow border-0">
+    <div class="card-header text-center">
+      <h2>Stark Util &nbsp;&nbsp;<i class="fas fa-random"></i></h2>
+    </div>
+    <div class="card-body px-lg-5">
+      <input v-model="input" type="text" class="form-control formy mt-2 mb-4 text-center shadow"
+        placeholder="input..." />
       <!-- TODO check every inFmt -->
       <!-- TODO check every isValid -->
       <ul class="list-group mb-4">
@@ -12,7 +17,6 @@
         <ToggleComponent :dataBag=outSelectorComp title="selector:" />
         <ToggleComponent :dataBag=out256Comp title="uint256(low high):" />
         <ToggleComponent :dataBag=outBig3 title="Big3(d0 d1 d2):" />
-
       </ul>
     </div>
   </div>
