@@ -7,7 +7,7 @@
                     </router-link>
 
                     <router-link to="/converter">Converter</router-link>
-                    <router-link to="/l1l2">L1->L2</router-link>
+                    <router-link to="/l1l2">L1 &#8594; L2</router-link>
                     <router-link to="/signature">Signature</router-link>
                     <div class="topnav-right">
                         <a href="https://github.com/gaetbout/stark-utils" target="_blank">About</a>
@@ -37,7 +37,7 @@ img {
 
 .topnav a {
     float: left;
-    color: #f2f2f2;
+    color: hsl(0, 0%, 95%);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -46,13 +46,13 @@ img {
 }
 
 .topnav a:hover {
-    background: linear-gradient(0deg, rgba(40, 40, 110, 1) 0%, rgba(105, 66, 93, 1) 44%, rgba(232, 81, 34, 1) 100%);
-    color: #28286e
+    background-color: hsl(14, 81%, 52%);
+    color: hsl(240, 47%, 29%)
 }
 
 .topnav a.active {
-    background-color: #e85122;
-    color: #28286e;
+    background-color: hsl(14, 81%, 52%);
+    color: hsl(240, 47%, 29%);
     border-radius: 10px;
 }
 

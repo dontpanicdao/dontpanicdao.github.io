@@ -33,6 +33,6 @@ export default {
 }
 
 .main-content {
-  background: linear-gradient(180deg, rgba(40, 40, 110, 1) 0%, rgba(105, 66, 93, 1) 44%, rgba(232, 81, 34, 1) 100%);
+  background: hsl(240, 47%, 29%);
 }
 </style>

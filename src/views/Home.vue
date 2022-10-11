@@ -3,7 +3,7 @@
     <h1 class="text-center">Stark-utils</h1>
     <h2 class="text-center">A Cairo toolbox</h2>
     <div class="text-center sm-12 pt-md-6">
-      <router-link to="/converter">Go to converter</router-link>
+      <router-link to="/converter">Open converter</router-link>
     </div>
   </div>
 </template>
@@ -13,27 +13,27 @@
 <style scoped>
 h1 {
   font-size: 11vw;
-  color: hsl(14, 81%, 52%);
+  color: #f2f2f2;
 }
 
 h2 {
-  color: hsl(14, 81%, 52%);
-  font-size: 6vw;
+  color: #f2f2f2;
+  font-size: 4vw;
 }
 
 a {
   padding: 20px;
   font-size: 2vw;
-  background: hsl(14, 81%, 52%);
+  background-color: hsl(14, 81%, 52%);
   border-radius: 10px;
   text-decoration: none;
-  color: white;
-  transition: all 300ms linear;
+  color: #f2f2f2;
+  transition: all 200ms ease-in;
 }
 
 a:hover {
-  font-size: 2.5vw;
-  background: hsl(14, 81%, 45%);
+  font-size: 2.2vw;
+  background: hsl(240, 47%, 45%);
   color: white;
 }
 </style>
