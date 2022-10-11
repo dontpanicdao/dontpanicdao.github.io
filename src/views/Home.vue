@@ -18,12 +18,12 @@ h1 {
 
 h2 {
   color: #f2f2f2;
-  font-size: 4vw;
+  font-size: 3vw;
 }
 
 a {
   padding: 20px;
-  font-size: 2vw;
+  font-size: 1.5vw;
   background-color: hsl(14, 81%, 52%);
   border-radius: 10px;
   text-decoration: none;
@@ -32,7 +32,7 @@ a {
 }
 
 a:hover {
-  font-size: 2.2vw;
+  font-size: 1.8vw;
   background: hsl(240, 47%, 45%);
   color: white;
 }
