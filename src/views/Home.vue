@@ -34,6 +34,6 @@ a {
 a:hover {
   font-size: 1.8vw;
   background: hsl(240, 47%, 45%);
-  color: white;
+  color: #f2f2f2;
 }
 </style>

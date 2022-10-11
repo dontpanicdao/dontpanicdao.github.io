@@ -44,6 +44,7 @@ img {
     text-decoration: none;
     font-size: 17px;
     border-radius: 10px;
+    transition: all 300ms ease-in;
 }
 
 .topnav a:hover {
@@ -53,7 +54,7 @@ img {
 
 .topnav a.active {
     background-color: hsl(14, 81%, 52%);
-    color: hsl(240, 47%, 29%);
+    color: #f2f2f2;
     border-radius: 10px;
 }
 
