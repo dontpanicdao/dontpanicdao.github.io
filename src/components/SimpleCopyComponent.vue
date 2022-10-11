@@ -1,5 +1,5 @@
 <template>
-    <li class="list-group-item handleOverflow">
+    <li class="list-group-item">
         {{title}}
         <br />
         <CopyComponent :valueToCopy=dataBag.val :isValid=dataBag.valid :inFormat=dataBag.inFmt />

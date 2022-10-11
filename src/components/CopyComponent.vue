@@ -13,7 +13,10 @@ export default {
     name: 'CopyComponent',
     props: {
         valueToCopy: String,
-        isValid: Boolean,
+        isValid: {
+            type: Boolean,
+            default: true
+        },
         inFormat: {
             type: Boolean,
             default: true

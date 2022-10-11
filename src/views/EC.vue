@@ -15,15 +15,11 @@
         <ul v-else class="list-group">
           <li class="list-group-item">
             Private:
-            <div :class="{ 'btn btn-sm btn-outline-success': privateKey }" @click="copy(privateKey)">
-              {{ privateKey }}
-            </div>
+            <CopyComponent :valueToCopy=privateKey :inFormat=false />
           </li>
           <li class="list-group-item">
             Public X:
-            <div :class="{ 'btn btn-sm btn-outline-success': publicKeyX }" @click="copy(publicKeyX)">
-              {{ publicKeyX }}
-            </div>
+            <CopyComponent :valueToCopy=publicKeyX :inFormat=false />
           </li>
         </ul>
         <div>
@@ -37,9 +33,7 @@
           </div>
           <br />
           Hash Out:
-          <div :class="{ 'btn btn-sm btn-outline-success': hashOut }" @click="copy(hashOut)">
-            {{ hashOut }}
-          </div>
+          <CopyComponent :valueToCopy=hashOut :inFormat=false />
           <br />
           <br />
           Signature:
@@ -102,8 +96,12 @@
 import { mapGetters } from "vuex";
 import { hash, ec } from "starknet";
 import utils from "@/utils";
+import CopyComponent from "@/components/CopyComponent";
 
 export default {
+  components: {
+    CopyComponent,
+  },
   data() {
     return {
       hash1: "",
