@@ -1,8 +1,10 @@
 <template>
-  <div class="pt-5 pt-md-12  max-height">
-    <h1>Stark-utils</h1>
-    <h2>I felt you pain</h2>
-    <router-link to="/converter">Go to converter</router-link>
+  <div class="pt-5 pt-md-12">
+    <h1 class="text-center">Stark-utils</h1>
+    <h2 class="text-center">A Cairo toolbox</h2>
+    <div class="text-center">
+      <router-link to="/converter">Go to converter</router-link>
+    </div>
   </div>
 </template>
 <script>
@@ -10,12 +12,10 @@
 </script>
 <style scoped>
 h1 {
-  text-align: center;
   font-size: 5em;
 }
 
 h2 {
-  text-align: center;
   font-size: 3em;
 }
 </style>
