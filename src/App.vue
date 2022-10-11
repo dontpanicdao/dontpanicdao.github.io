@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <div class="main-content ">
-      <div class="min-vh-100"
-        style="
-          background: linear-gradient(180deg, rgba(40, 40, 110, 1) 0%, rgba(105, 66, 93, 1) 44%, rgba(232, 81, 34, 1) 100%);">
+      <div class="min-vh-100">
         <Header />
         <div class="d-flex pt-1 pt-md-4 container-fluid" rel="preload">
           <div class="container-fluid">
@@ -32,5 +30,9 @@ export default {
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.main-content {
+  background: linear-gradient(180deg, rgba(40, 40, 110, 1) 0%, rgba(105, 66, 93, 1) 44%, rgba(232, 81, 34, 1) 100%);
 }
 </style>
