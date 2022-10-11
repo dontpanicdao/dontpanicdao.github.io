@@ -36,6 +36,7 @@ img {
 }
 
 .topnav a {
+    margin: 5px;
     float: left;
     color: hsl(0, 0%, 95%);
     text-align: center;
