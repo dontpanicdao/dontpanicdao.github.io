@@ -12,7 +12,7 @@
 </script>
 <style scoped>
 h1 {
-  font-size: 11vw;
+  font-size: 8vw;
   color: #f2f2f2;
 }
 
