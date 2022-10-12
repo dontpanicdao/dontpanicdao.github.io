@@ -1,5 +1,4 @@
 <template>
-
   <div class="card bg-secondary shadow border-0">
     <div class="card-header text-center">
       <h2>Convertor &nbsp;&nbsp;<i class="fas fa-random"></i></h2>
@@ -13,7 +12,6 @@
         <SimpleCopyComponent :dataBag=outBNComp title="felt:" />
         <SimpleCopyComponent :dataBag=outHexComp title="hex:" />
         <SimpleCopyComponent :dataBag=outStringComp title="string:" />
-
         <ToggleComponent :dataBag=outSelectorComp title="selector:" />
         <ToggleComponent :dataBag=out256Comp title="uint256(low high):" />
         <ToggleComponent :dataBag=outBig3 title="Big3(d0 d1 d2):" />
@@ -34,9 +32,6 @@ export default {
   },
   data() {
     return {
-      twoFiddyHex: false,
-      bigThreeHex: false,
-      selectorHex: false,
       input: "",
       MAX_VAL: new BN(
         "3618502788666131106986593281521497120414687020801267626233049500247285301248",
