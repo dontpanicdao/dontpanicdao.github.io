@@ -10,7 +10,8 @@
                     <router-link to="/l1l2">L1 &#8594; L2</router-link>
                     <router-link to="/signature">Signature</router-link>
                     <div class="topnav-right">
-                        <a href="https://github.com/gaetbout/stark-utils" target="_blank">About</a>
+                        <a href="https://github.com/gaetbout/stark-utils" target="_blank">About <i
+                                class="fas fa-link"></i></a>
                     </div>
                 </div>
             </div>
