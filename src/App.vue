@@ -7,7 +7,11 @@
           <div class="container-fluid">
             <div class="row justify-content-center">
               <div class="col-lg-8 col-md-11 col-sm-12">
-                <router-view> </router-view>
+                <router-view v-slot="{ Component }">
+                  <transition name="route" mode="out-in">
+                    <component :is="Component" />
+                  </transition>
+                </router-view>
               </div>
             </div>
           </div>
@@ -34,5 +38,23 @@ export default {
 
 .main-content {
   background: hsl(240, 47%, 29%);
+}
+
+.route-enter-from {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.route-enter-active {
+  transition: all 300ms ease-out
+}
+
+.route-leave-to {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.route-leave-active {
+  transition: all 300ms ease-in
 }
 </style>
