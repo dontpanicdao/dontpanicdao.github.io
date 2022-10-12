@@ -13,11 +13,11 @@
 <style scoped>
 h1 {
   font-size: 8vw;
-  color: #f2f2f2;
+  color: hsl(0, 0%, 95%);
 }
 
 h2 {
-  color: #f2f2f2;
+  color: hsl(0, 0%, 95%);
   font-size: 3vw;
 }
 
@@ -27,13 +27,13 @@ a {
   background-color: hsl(14, 81%, 52%);
   border-radius: 10px;
   text-decoration: none;
-  color: #f2f2f2;
+  color: hsl(0, 0%, 95%);
   transition: all 200ms ease-in;
 }
 
 a:hover {
   font-size: 1.8vw;
-  background: hsl(240, 47%, 45%);
-  color: #f2f2f2;
+  background-color: hsl(14, 81%, 46%);
+  color: hsl(0, 0%, 100%);
 }
 </style>
