@@ -118,6 +118,10 @@ export default {
   overflow-y: hidden;
 }
 
+h2 {
+  margin-bottom: 0px;
+}
+
 .list-group-item .btn {
   font-size: 0.8rem;
 }

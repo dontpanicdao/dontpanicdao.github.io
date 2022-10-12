@@ -11,3 +11,9 @@
         </div>
     </div>
 </template>
+<style scoped>
+h2 {
+    margin-bottom: 0px;
+}
+</style>
+  
