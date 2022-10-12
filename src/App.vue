@@ -40,6 +40,10 @@ export default {
   background: hsl(240, 47%, 29%);
 }
 
+h2 {
+  margin-bottom: 0px !important;
+}
+
 .route-enter-from {
   opacity: 0;
   transform: translateX(100px);

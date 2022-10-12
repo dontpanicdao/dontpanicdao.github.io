@@ -172,17 +172,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.ec-util {
-  font-size: 0.8rem;
-}
-
-.list-group-item {
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-h2 {
-  margin-bottom: 0px;
-}
-</style>

@@ -112,17 +112,8 @@ export default {
   },
 };
 </script>
-<style scoped>
-.list-group-item {
-  overflow-x: auto;
-  overflow-y: hidden;
-}
 
-h2 {
-  margin-bottom: 0px;
-}
 
-.list-group-item .btn {
-  font-size: 0.8rem;
-}
-</style>
+
+
+<style src="@vueform/toggle/themes/default.css" />

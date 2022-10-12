@@ -11,10 +11,3 @@
         </div>
     </div>
 </template>
-<style scoped>
-/* TODO make this more global */
-h2 {
-    margin-bottom: 0px;
-}
-</style>
-  
