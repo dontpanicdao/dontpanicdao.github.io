@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid">
+    <div v-if="!isHomePage" class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-11 col-sm-12">
                 <div class="topnav">
@@ -21,6 +21,11 @@
 <script>
 export default {
     name: "Header",
+    computed: {
+        isHomePage() {
+            return this.$route.name === 'Home'
+        }
+    }
 };
 </script>
 

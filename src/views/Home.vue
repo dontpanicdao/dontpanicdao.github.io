@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-5 pt-md-12">
+  <div class="pt-8 pt-md-12">
     <h1 class="text-center">Stark-utils</h1>
     <h2 class="text-center">A Cairo toolbox</h2>
     <div class="text-center sm-12 pt-md-6">
