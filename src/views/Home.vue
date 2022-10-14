@@ -42,6 +42,10 @@ a:hover {
     font-size: 1.5em;
   }
 
+  a:hover {
+    font-size: 2em;
+  }
+
   h1 {
     font-size: 4em;
   }
