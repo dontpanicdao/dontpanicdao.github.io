@@ -25,6 +25,7 @@ It allows to:
  - Update security, some packages are obsolete
  - Do "About" page with link to github
  - On convertor page would a global switch Dec <==> Hex be better?
+ - Save selector as local storage?
 
 ## Dev Tools for StarkNet
 
