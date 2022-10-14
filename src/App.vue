@@ -44,6 +44,11 @@ h2 {
   margin-bottom: 0px !important;
 }
 
+.list-group-item {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 .route-enter-from {
   opacity: 0;
   transform: translateX(100px);

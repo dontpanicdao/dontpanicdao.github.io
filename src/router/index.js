@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory  } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 
 import Home from "@/views/Home.vue";
 import Converter from "@/views/Converter.vue";
