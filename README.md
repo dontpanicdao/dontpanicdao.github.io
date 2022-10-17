@@ -26,6 +26,8 @@ It allows to:
  - Do "About" page with link to github
  - On convertor page would a global switch Dec <==> Hex be better?
  - Save selector as local storage?
+ - get rid of bootstrap
+ - Is the store used or planned to be used? If not ==> Remove it
 
 ## Dev Tools for StarkNet
 

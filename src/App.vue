@@ -49,7 +49,9 @@ h2 {
   overflow-y: hidden;
 }
 
-.route-enter-from {
+
+/* Transition */
+/*.route-enter-from {
   opacity: 0;
   transform: translateX(100px);
 }
@@ -65,5 +67,17 @@ h2 {
 
 .route-leave-active {
   transition: all 300ms ease-in
+}
+
+*/
+
+.route-enter-from,
+.route-leave-to {
+  opacity: 0;
+}
+
+.route-enter-active,
+.route-leave-active {
+  transition: opacity 400ms ease-out;
 }
 </style>

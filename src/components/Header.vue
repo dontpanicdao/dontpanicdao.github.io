@@ -1,20 +1,14 @@
 <template>
-    <div id="headerbar" :class="[!isHomePage ? 'show' : '',]">
-        <div v-show=!isHomePage class="container-fluid ">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-md-11 col-sm-12">
-                    <div class="topnav">
-                        <router-link to="/"><img src="img/brand/jibeHex.png" alt="Logo">
-                        </router-link>
-
-                        <router-link to="/converter">Converter</router-link>
-                        <router-link to="/l1l2">L1 &#8594; L2</router-link>
-                        <router-link to="/signature">Signature</router-link>
-                        <div class="topnav-right">
-                            <a href="https://github.com/gaetbout/stark-utils" target="_blank">About <i
-                                    class="fas fa-link"></i></a>
-                        </div>
-                    </div>
+    <div :class="[!isHomePage ? 'show' : 'hide',]" class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-11 col-sm-12">
+                <router-link to="/"><img src="img/brand/jibeHex.png" alt="Logo"></router-link>
+                <router-link to="/converter">Converter</router-link>
+                <router-link to="/l1l2">L1 &#8594; L2</router-link>
+                <router-link to="/signature">Signature</router-link>
+                <div class="topnav-right">
+                    <a href="https://github.com/gaetbout/stark-utils" target="_blank">About <i
+                            class="fas fa-link"></i></a>
                 </div>
             </div>
         </div>
@@ -33,17 +27,12 @@ export default {
 </script>
 
 <style scoped>
-.topnav {
-    position: relative;
-    overflow: hidden;
-}
-
 img {
     width: 32px;
     height: 32px;
 }
 
-.topnav a {
+a {
     margin: 5px;
     float: left;
     color: hsl(0, 0%, 95%);
@@ -52,21 +41,21 @@ img {
     text-decoration: none;
     font-size: 17px;
     border-radius: 10px;
-    transition: all 300ms ease-in;
+    transition: all 200ms ease-in;
 }
 
-.topnav a:hover {
+a:hover {
     background-color: hsl(14, 81%, 52%);
     color: hsl(240, 47%, 29%)
 }
 
-.topnav a.active {
+a.active {
     background-color: hsl(14, 81%, 52%);
     color: #f2f2f2;
     border-radius: 10px;
 }
 
-.topnav a.active:first-child {
+a.active:first-child {
     background-color: #e8502200;
 }
 
@@ -76,23 +65,20 @@ img {
 
 @media screen and (max-width: 600px) {
 
-    .topnav a,
+    a,
     .topnav-right {
         float: none;
         display: block;
     }
+}
 
-    .topnav-centered a {
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: none;
-    }
+.hide {
+    opacity: 0;
 }
 
 .show {
     visibility: visible;
-    animation: fadein 300ms;
+    animation: fadein 400ms ease-in;
 }
 
 @-webkit-keyframes fadein {
