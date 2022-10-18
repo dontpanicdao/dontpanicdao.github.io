@@ -113,7 +113,6 @@ export default {
 };
 </script>
 
+<style src="@vueform/toggle/themes/default.css">
 
-
-
-<style src="@vueform/toggle/themes/default.css" />
+</style>

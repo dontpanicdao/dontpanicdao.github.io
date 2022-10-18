@@ -28,6 +28,7 @@ It allows to:
  - Save selector as local storage?
  - get rid of bootstrap
  - Is the store used or planned to be used? If not ==> Remove it
+ - Add a page with infos such as MAX_FELT, table of power of 2, other stuff?
 
 ## Dev Tools for StarkNet
 

@@ -51,26 +51,6 @@ h2 {
 
 
 /* Transition */
-/*.route-enter-from {
-  opacity: 0;
-  transform: translateX(100px);
-}
-
-.route-enter-active {
-  transition: all 300ms ease-out
-}
-
-.route-leave-to {
-  opacity: 0;
-  transform: translateX(-100px);
-}
-
-.route-leave-active {
-  transition: all 300ms ease-in
-}
-
-*/
-
 .route-enter-from,
 .route-leave-to {
   opacity: 0;

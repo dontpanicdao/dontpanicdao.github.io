@@ -1,5 +1,5 @@
 <template>
-    <div :class="[!isHomePage ? 'show' : 'hide',]" class="container-fluid">
+    <div :class="getHeaderClass" class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-11 col-sm-12">
                 <router-link to="/"><img src="img/brand/jibeHex.png" alt="Logo"></router-link>
@@ -19,8 +19,15 @@
 export default {
     name: "Header",
     computed: {
-        isHomePage() {
-            return this.$route.name === 'Home'
+        getHeaderClass() {
+            console.log(this.$router.options.history.state)
+            if (this.$route.name === 'Home') {
+                if (this.$router.options.history.state.replaced) {
+                    return 'invisible'
+                }
+                return 'hide'
+            }
+            return 'show'
         }
     }
 };
@@ -72,8 +79,13 @@ a.active:first-child {
     }
 }
 
+.invisible {
+    opacity: 0;
+}
+
 .hide {
     opacity: 0;
+    animation: fadeout 400ms ease-out;
 }
 
 .show {
@@ -102,6 +114,30 @@ a.active:first-child {
     to {
         opacity: 1;
         transform: translateY(0px);
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-100px);
     }
 }
 </style>
