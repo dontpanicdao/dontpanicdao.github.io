@@ -77,6 +77,11 @@ a.active:first-child {
         float: none;
         display: block;
     }
+
+    .hide,
+    .invisible {
+        position: absolute;
+    }
 }
 
 .invisible {
