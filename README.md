@@ -15,6 +15,7 @@ It allows to:
     Reason: Better using a block explorer
 
 ## TODO list
+ - Add a page with infos such as MAX_FELT, table of power of 2, list of BIG tokens and their address (ETH, DAI, USDC, USDT, ... WITH A WARNING TO ALWAYS DOUBLE CHECK THOSE) other stuff?
  - L1->L2 page: using  
  https://stackoverflow.com/questions/72239816/checking-result-of-an-l1-l2-message-invoke-in-starknet  
  https://alpha4.starknet.io/feeder_gateway/get_transaction?transactionHash=0x56b7c13c0008f78d4cb4e39f993d7ed9921bf140f54966574d84d9c7dd80702
@@ -25,7 +26,6 @@ It allows to:
  - Do "About" page with link to github
  - On convertor page would a global switch Dec <==> Hex be better?
  - Save selector as local storage? ==> Is the store used or planned to be used? If not ==> Remove it
- - Add a page with infos such as MAX_FELT, table of power of 2, other stuff?
 
 ## Dev Tools for StarkNet
 
