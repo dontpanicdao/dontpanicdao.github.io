@@ -20,7 +20,6 @@ export default {
     name: "Header",
     computed: {
         getHeaderClass() {
-            console.log(this.$router.options.history.state)
             if (this.$route.name === 'Home') {
                 if (this.$router.options.history.state.replaced) {
                     return 'invisible'
