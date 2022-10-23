@@ -116,7 +116,14 @@ export default {
 </script>
 
 <style>
+.toggle {
+  color: #f2f2f2;
+  background-color: hsl(240, 47%, 29%);
+  border-color: hsl(240, 47%, 29%);
+}
+
 .toggle-on {
+  color: #f2f2f2;
   background-color: hsl(14, 81%, 52%);
   border-color: hsl(14, 81%, 52%);
 }
