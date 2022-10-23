@@ -9,12 +9,12 @@
       <!-- TODO check every inFmt -->
       <!-- TODO check every isValid -->
       <ul class="list-group mb-4">
-        <SimpleCopyComponent :dataBag=outBNComp title="felt:" />
-        <SimpleCopyComponent :dataBag=outHexComp title="hex:" />
-        <SimpleCopyComponent :dataBag=outStringComp title="string:" />
-        <ToggleComponent :dataBag=outSelectorComp title="selector:" />
-        <ToggleComponent :dataBag=out256Comp title="uint256(low high):" />
-        <ToggleComponent :dataBag=outBig3 title="Big3(d0 d1 d2):" />
+        <SimpleCopyComponent :dataBag="outBNComp" title="felt:" />
+        <SimpleCopyComponent :dataBag="outHexComp" title="hex:" />
+        <SimpleCopyComponent :dataBag="outStringComp" title="string:" />
+        <ToggleComponent :dataBag="outSelectorComp" title="selector:" />
+        <ToggleComponent :dataBag="out256Comp" title="uint256(low high):" />
+        <ToggleComponent :dataBag="outBig3" title="Big3(d0 d1 d2):" />
       </ul>
     </div>
   </div>

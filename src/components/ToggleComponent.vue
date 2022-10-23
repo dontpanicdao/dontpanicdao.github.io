@@ -1,15 +1,15 @@
 <template>
     <li class="list-group-item handleOverflow">
-        {{title}}
+        {{ title }}
         <Toggle v-model="selectorHex" onLabel="hex" offLabel="dec" class="float-right" />
         <br />
         <div v-if="selectorHex">
-            <CopyComponent v-for="item in dataBag.hexValues" :key="item" :valueToCopy=item :isValid=dataBag.valid
-                :inFormat=dataBag.inFmt />
+            <CopyComponent v-for="item in dataBag.hexValues" :key="item" :valueToCopy="item" :isValid="dataBag.valid"
+                :inFormat="dataBag.inFmt" />
         </div>
         <div v-else>
-            <CopyComponent v-for="item in dataBag.intValues" :key="item" :valueToCopy=item :isValid=dataBag.valid
-                :inFormat=dataBag.inFmt />
+            <CopyComponent v-for="item in dataBag.intValues" :key="item" :valueToCopy="item" :isValid="dataBag.valid"
+                :inFormat="dataBag.inFmt" />
         </div>
     </li>
 </template>
@@ -25,7 +25,18 @@ export default {
     },
     name: 'ToggleComponent',
     props: {
-        dataBag: Object,
+        dataBag: {
+            intValues: [String],
+            hexValues: [String],
+            valid: {
+                type: Boolean,
+                default: true
+            },
+            inFmt: {
+                type: Boolean,
+                default: true
+            },
+        },
         title: String
     },
     data() {

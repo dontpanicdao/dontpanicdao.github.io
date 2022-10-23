@@ -15,11 +15,11 @@
         <ul v-else class="list-group">
           <li class="list-group-item">
             Private:
-            <CopyComponent :valueToCopy=privateKey :inFormat=false />
+            <CopyComponent :valueToCopy="privateKey" :inFormat="false" />
           </li>
           <li class="list-group-item">
             Public X:
-            <CopyComponent :valueToCopy=publicKeyX :inFormat=false />
+            <CopyComponent :valueToCopy="publicKeyX" :inFormat="false" />
           </li>
         </ul>
         <div>
@@ -33,7 +33,7 @@
           </div>
           <br />
           Hash Out:
-          <CopyComponent :valueToCopy=hashOut :inFormat=false />
+          <CopyComponent :valueToCopy=hashOut :inFormat="false" />
           <br />
           <br />
           Signature:
