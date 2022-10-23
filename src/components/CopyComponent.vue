@@ -41,14 +41,12 @@ export default {
 <style scoped>
 /* TODO add some global CSS vars */
 
-
-
 #snackbar {
     visibility: hidden;
     min-width: 200px;
     margin-left: -125px;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--secondary-color);
+    color: var(--font-white-color);
     text-align: center;
     border-radius: 10px;
     padding: 12px;

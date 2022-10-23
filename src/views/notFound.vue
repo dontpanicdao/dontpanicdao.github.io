@@ -3,7 +3,7 @@
         <h1 class="pt-4 text-center">Page not found</h1>
         <h2 class="pt-4 text-center">Proof incorrect</h2>
         <div class="text-center sm-6 pt-5">
-            <a @click="goBack()">Go back</a>
+            <a @click="goBack">Go back</a>
         </div>
     </div>
 </template>
@@ -20,18 +20,18 @@ export default {
 <style scoped>
 h1 {
     font-size: 6vw;
-    color: hsl(0, 0%, 95%);
+    color: var(--font-white-color);
 }
 
 h2 {
-    color: hsl(0, 0%, 95%);
+    color: var(--font-white-color);
     font-size: 4vw;
 }
 
 a {
     padding: 20px;
     font-size: 1.5vw;
-    background-color: hsl(14, 81%, 52%);
+    background-color: var(--secondary-color);
     border-radius: 10px;
     text-decoration: none;
     color: hsl(0, 0%, 95%) !important;
@@ -40,8 +40,8 @@ a {
 
 a:hover {
     font-size: 1.8vw;
-    background-color: hsl(14, 81%, 46%);
-    color: hsl(0, 0%, 100%);
+    background-color: var(--secondary-color-hover);
+    color: var(--font-white-color-hover);
 }
 
 @media only screen and (max-width: 600px) {

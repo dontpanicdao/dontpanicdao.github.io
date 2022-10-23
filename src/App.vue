@@ -26,6 +26,11 @@ export default {
 </script>
 <style>
 * {
+  --main-color: hsl(240, 47%, 29%);
+  --secondary-color: hsl(14, 81%, 52%);
+  --secondary-color-hover: hsl(14, 81%, 46%);
+  --font-white-color: hsl(0, 0%, 95%);
+  --font-white-color-hover: hsl(0, 0%, 100%);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -37,7 +42,7 @@ export default {
 }
 
 .main-content {
-  background: hsl(240, 47%, 29%);
+  background: var(--main-color);
 }
 
 h2 {

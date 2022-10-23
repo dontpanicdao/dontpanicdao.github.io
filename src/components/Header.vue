@@ -43,7 +43,7 @@ img {
 a {
     margin: 5px;
     float: left;
-    color: hsl(0, 0%, 95%);
+    color: var(--font-white-color);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -53,19 +53,16 @@ a {
 }
 
 a:hover {
-    background-color: hsl(14, 81%, 52%);
-    color: hsl(240, 47%, 29%)
+    background-color: var(--secondary-color);
+    color: var(--main-color);
 }
 
 a.active {
-    background-color: hsl(14, 81%, 52%);
-    color: #f2f2f2;
+    background-color: var(--secondary-color);
+    color: var(--font-white-color);
     border-radius: 10px;
 }
 
-a.active:first-child {
-    background-color: #e8502200;
-}
 
 .topnav-right {
     float: right;

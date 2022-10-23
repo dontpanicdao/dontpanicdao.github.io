@@ -117,15 +117,15 @@ export default {
 
 <style>
 .toggle {
-  color: #f2f2f2;
-  background-color: hsl(240, 47%, 29%);
-  border-color: hsl(240, 47%, 29%);
+  color: var(--font-white-color);
+  background-color: var(--main-color);
+  border-color: var(--main-color);
 }
 
 .toggle-on {
-  color: #f2f2f2;
-  background-color: hsl(14, 81%, 52%);
-  border-color: hsl(14, 81%, 52%);
+  color: var(--font-white-color);
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
 .list-group-item {

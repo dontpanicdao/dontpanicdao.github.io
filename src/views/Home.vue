@@ -13,27 +13,27 @@
 <style scoped>
 h1 {
   font-size: 8vw;
-  color: hsl(0, 0%, 95%);
+  color: var(--font-white-color);
 }
 
 h2 {
-  color: hsl(0, 0%, 95%);
+  color: var(--font-white-color);
   font-size: 3vw;
 }
 
 a {
   padding: 20px;
   font-size: 1.5vw;
-  background-color: hsl(14, 81%, 52%);
+  background-color: var(--secondary-color);
   border-radius: 10px;
   text-decoration: none;
-  color: hsl(0, 0%, 95%);
+  color: var(--font-white-color);
   transition: all 200ms ease-in;
 }
 
 a:hover {
   font-size: 1.8vw;
-  background-color: hsl(14, 81%, 46%);
+  background-color: var(--secondary-color-hover);
   color: hsl(0, 0%, 100%);
 }
 
