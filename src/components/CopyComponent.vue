@@ -19,7 +19,7 @@ export default {
         };
     },
     props: {
-        valueToCopy: String || Uint8Array,
+        valueToCopy: String,
         isValid: {
             type: Boolean,
             default: true
