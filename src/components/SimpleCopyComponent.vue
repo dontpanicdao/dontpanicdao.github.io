@@ -10,10 +10,10 @@
 import CopyComponent from "./CopyComponent";
 
 export default {
+    name: 'SimpleCopyComponent',
     components: {
         CopyComponent,
     },
-    name: 'SimpleCopyComponent',
     props: {
         dataBag: {
             val: String,
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style scoped>
-.list-group-item {
+li {
     min-height: 85px;
 }
 </style>

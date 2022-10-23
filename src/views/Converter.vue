@@ -115,6 +115,14 @@ export default {
 };
 </script>
 
-<style src="@vueform/toggle/themes/default.css">
+<style>
+.toggle-on {
+  background-color: hsl(14, 81%, 52%);
+  border-color: hsl(14, 81%, 52%);
+}
 
+.list-group-item {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
 </style>

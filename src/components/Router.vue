@@ -9,11 +9,6 @@
 <script>
 </script>
 <style>
-.list-group-item {
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-
 /* Transition */
 .route-enter-from,
 .route-leave-to {

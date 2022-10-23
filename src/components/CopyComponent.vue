@@ -1,7 +1,6 @@
 <template>
-    <div v-if="valueToCopy && valueToCopy !== '0x'" :class="[
-        isValid ? 'btn btn-sm btn-outline-success' : 'btn btn-sm btn-outline-danger',
-    ]" @click="copy(valueToCopy)">
+    <div v-if="valueToCopy && valueToCopy !== '0x'"
+        :class="[isValid ? 'btn-outline-success' : 'btn-outline-danger', 'btn btn-sm ']" @click="copy(valueToCopy)">
         <i v-if="inFormat" class="fas fa-check-circle text-success float-left"> </i>
         {{ valueToCopy }}
     </div>
@@ -41,6 +40,9 @@ export default {
 
 <style scoped>
 /* TODO add some global CSS vars */
+
+
+
 #snackbar {
     visibility: hidden;
     min-width: 200px;
