@@ -1,6 +1,6 @@
 <template>
     <li class="list-group-item">
-        {{title}}
+        {{ title }}
         <br />
         <CopyComponent :valueToCopy=dataBag.val :isValid=dataBag.valid :inFormat=dataBag.inFmt />
     </li>
@@ -15,7 +15,17 @@ export default {
     },
     name: 'SimpleCopyComponent',
     props: {
-        dataBag: Object,
+        dataBag: {
+            val: String,
+            isValid: {
+                type: Boolean,
+                default: true
+            },
+            inFormat: {
+                type: Boolean,
+                default: true
+            },
+        },
         title: String
     },
 }

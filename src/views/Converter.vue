@@ -50,18 +50,20 @@ export default {
       return { val, valid, inFmt };
     },
     outHexComp() {
-      const val = utils.toHex(this.input);
+      let val = utils.toHex(this.input);
       const inFmt = this.isHexInput();
       const test = new BN(utils.toBN(val));
       const valid = this.isLessThanMaxVal(test);
+      val = val.toString();
       return { val, valid, inFmt };
     },
     outStringComp() {
       const hex = utils.toHex(this.input).slice(2);
-      const val = hex.length == 0 ? "" : Buffer.from(hex, 'hex');
+      let val = hex.length == 0 ? "" : Buffer.from(hex, 'hex');
       const inFmt = utils.isDecimal(this.input);
       const test = new BN(val);
       const valid = this.isLessThanMaxVal(test);
+      val = val.toString();
       return { val, valid, inFmt };
     },
     outSelectorComp() {
@@ -69,7 +71,7 @@ export default {
       const inFmt = !utils.isDecimal(this.input) && !this.isHexInput();
       const test = new BN(utils.toBN(val.inty));
       const valid = this.isLessThanMaxVal(test);
-      return { intValues: [val.inty], hexValues: [val.hexy], valid, inFmt };
+      return { intValues: [val.inty.toString()], hexValues: [val.hexy.toString()], valid, inFmt };
     },
     out256Comp() {
       const val256 = utils.to256(this.input);

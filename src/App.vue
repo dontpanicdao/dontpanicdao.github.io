@@ -1,19 +1,11 @@
 <template>
-  <div id="app">
-    <div class="main-content ">
-      <div class="min-vh-100">
-        <Header />
-        <div class="d-flex pt-1 pt-md-4 container-fluid" rel="preload">
-          <div class="container-fluid">
-            <div class="row justify-content-center">
-              <div class="col-lg-8 col-md-11 col-sm-12">
-                <router-view v-slot="{ Component }">
-                  <transition name="route" mode="out-in">
-                    <component :is="Component" />
-                  </transition>
-                </router-view>
-              </div>
-            </div>
+  <div class="app main-content min-vh-100">
+    <Header />
+    <div class="d-flex pt-1 pt-md-4 container-fluid" rel="preload">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-11 col-sm-12">
+            <Router />
           </div>
         </div>
       </div>
@@ -23,14 +15,22 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import Router from '@/components/Router.vue';
 
 export default {
   components: {
     Header,
+    Router
   },
 };
 </script>
 <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -42,22 +42,5 @@ export default {
 
 h2 {
   margin-bottom: 0px !important;
-}
-
-.list-group-item {
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-
-/* Transition */
-.route-enter-from,
-.route-leave-to {
-  opacity: 0;
-}
-
-.route-enter-active,
-.route-leave-active {
-  transition: opacity 400ms ease-out;
 }
 </style>

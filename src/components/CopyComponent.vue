@@ -1,6 +1,6 @@
 <template>
     <div v-if="valueToCopy && valueToCopy !== '0x'" :class="[
-      isValid ? 'btn btn-sm btn-outline-success' : 'btn btn-sm btn-outline-danger',
+        isValid ? 'btn btn-sm btn-outline-success' : 'btn btn-sm btn-outline-danger',
     ]" @click="copy(valueToCopy)">
         <i v-if="inFormat" class="fas fa-check-circle text-success float-left"> </i>
         {{ valueToCopy }}
@@ -19,7 +19,7 @@ export default {
         };
     },
     props: {
-        valueToCopy: String,
+        valueToCopy: String || Uint8Array,
         isValid: {
             type: Boolean,
             default: true
